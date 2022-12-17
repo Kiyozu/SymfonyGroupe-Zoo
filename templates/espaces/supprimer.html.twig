@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un espace{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Supprimer l'espace'' <i>{{ espace.nom }}</i></h1>
+        <p>L'espace sera suprimmé et tout ce qu'il contient.</p>
+        {{ form(formulaire) }}
+        <a href="{{ path("app_categories") }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un animal{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Supprimer les animaux' <i>{{ animal.nom }}</i></h1>
+        <p>Tous les animaux de cette enclos seront supprimés.</p>
+        {{ form(formulaire) }}
+        <a href="{{ path("app_categories") }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

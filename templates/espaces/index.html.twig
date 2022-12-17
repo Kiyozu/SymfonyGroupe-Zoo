@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir les espaces{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for e in espace %}
+                <div class="col col-3">
+                    <div class="mt-5 card">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ e.nom }}</h2>
+                            <span>Superficie : {{ e.superficie }} m²</span><br>
+                            <span>Date d'ouverture : {{ e.ouverture|date("d/m/Y") }}</span><br>
+                            <span>Date de fermeture : {{ e.fermeture|date("d/m/Y") }}</span>
+                            <a href="{{ path('app_espaces_modifier', {"id":e.id}) }}" class="mt-5 btn btn-secondary">Modifier</a>
+                            <a href="{{ path('app_espaces_supprimer', {"id":e.id}) }}" class="mt-5 btn btn-danger">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path("app_espaces_ajouter") }}" class="mt-5 btn btn-success  ">Ajouter un espace</a>
+    </div>
+{% endblock %}
